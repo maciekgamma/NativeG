@@ -1,0 +1,52 @@
+{
+  "name": "nativeg",
+  "version": "0.0.1",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "author": "Maciej Gamrot",
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c",
+    "hotpush": "node rollupWatcher.js",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.7",
+    "@babel/preset-react": "^7.14.5",
+    "@babel/preset-typescript": "^7.14.5",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-commonjs": "^19.0.0",
+    "@rollup/plugin-node-resolve": "^13.0.0",
+    "@types/color-string": "^1.5.0",
+    "@types/jest": "^26.0.24",
+    "@types/react": "^17.0.13",
+    "@types/react-native": "^0.64.10",
+    "jest": "^27.0.6",
+    "npmlog": "^4.1.2",
+    "rollup": "^2.52.7",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "ts-jest": "^27.0.4",
+    "tslib": "^2.3.0",
+    "typescript": "^4.3.5"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-native": "^0.64.2"
+  },
+  "dependencies": {
+    "color-string": "^1.5.5"
+  },
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ]
+  }
+}
