@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "build": "rollup -c",
-    "hotpush": "node rollupWatcher.js",
+    "hotpush": "node scripts/hotpush.js",
     "test": "jest"
   },
   "devDependencies": {
