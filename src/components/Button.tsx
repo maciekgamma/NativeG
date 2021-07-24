@@ -3,6 +3,7 @@ import { StyleSheet, TouchableOpacity, Text } from "react-native";
 
 import { Background } from "./Background";
 import { parseColor } from "../utils/ColorTool";
+import { useThemingExternal, basicPropertiesNames } from "../theme/Theme";
 
 export type ButtonProps = {
   onPress?: () => any;
@@ -27,9 +28,17 @@ export function Button({
   disabled,
   borderColor,
 }: ButtonProps) {
+  const externalThemingContext = useThemingExternal();
+  const primaryColor = externalThemingContext.getProperty(
+    basicPropertiesNames.primary
+  );
+  const onPrimaryColor = externalThemingContext.getProperty(
+    basicPropertiesNames.onPrimary
+  );
+
   const styles = StyleSheet.create({
     text: {
-      color: parseColor(color || "#000000"),
+      color: parseColor(color || onPrimaryColor || "#000000"),
       textAlign: "center",
       fontSize: size == "large" ? 24 : size == "small" ? 12 : 16,
       fontWeight: "bold",
@@ -41,9 +50,9 @@ export function Button({
       <Background
         rounded={rounded}
         outline={outline}
-        backgroundColor={backgroundColor}
+        backgroundColor={backgroundColor || primaryColor || "#ffffff"}
         disabled={disabled}
-        borderColor={borderColor}
+        borderColor={borderColor || onPrimaryColor || "#000000"}
         clickable
       >
         <Text style={styles.text}>{text}</Text>

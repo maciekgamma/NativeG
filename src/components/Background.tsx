@@ -35,7 +35,7 @@ export function Background({
       paddingHorizontal: paddingHorizontal || 10,
       margin: 5,
       backgroundColor: parseColor(
-        backgroundColor || "#000000",
+        backgroundColor || "#ffffff",
         backgroundColor && outline ? 0.5 : 0,
         outline
       ),

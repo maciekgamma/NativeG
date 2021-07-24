@@ -1,6 +1,13 @@
 import React, { ReactNode, useState } from "react";
 import { createContext, useContext } from "react";
 
+export const basicPropertiesNames = {
+  primary: "primary",
+  onPrimary: "onPrimary",
+  surface: "surface",
+  onSurface: "onSurface",
+};
+
 /**
  * Object with name assigned to every used color (string form).
  */

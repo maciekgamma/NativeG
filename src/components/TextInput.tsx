@@ -7,6 +7,7 @@ import {
 } from "react-native";
 
 import { Background } from "./Background";
+import { useThemingExternal, basicPropertiesNames } from "../theme/Theme";
 import { parseColor } from "../utils/ColorTool";
 
 export interface TextInputProps {
@@ -24,6 +25,13 @@ export interface TextInputProps {
 }
 
 export function TextInput(props: TextInputProps) {
+  const externalThemingContext = useThemingExternal();
+  const surfaceColor = externalThemingContext.getProperty(
+    basicPropertiesNames.surface
+  );
+  const onSurfaceColor = externalThemingContext.getProperty(
+    basicPropertiesNames.onSurface
+  );
   const [text, setText] = useState(props.defaultValue || "");
 
   const handleTextChange = (newText: string) => {
@@ -32,7 +40,7 @@ export function TextInput(props: TextInputProps) {
   const styles = StyleSheet.create({
     input: {
       width: "100%",
-      color: parseColor(props.color || "#ffffff"),
+      color: parseColor(props.color || onSurfaceColor || "#000000"),
       fontSize: props.size === "large" ? 22 : props.size === "small" ? 14 : 18,
       textAlign: props.textAlign || "center",
     },
@@ -42,7 +50,7 @@ export function TextInput(props: TextInputProps) {
     <Background
       outline={props.outline === undefined ? true : props.outline}
       rounded={props.rounded}
-      backgroundColor={props.backgroundColor || undefined}
+      backgroundColor={props.backgroundColor || surfaceColor || "#ffffff"}
       paddingHorizontal={props.size === "small" ? 10 : 12}
     >
       <NativeTextInput
