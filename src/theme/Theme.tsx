@@ -4,8 +4,18 @@ import { createContext, useContext } from "react";
 export const basicPropertiesNames = {
   primary: "primary",
   onPrimary: "onPrimary",
+  secondary: "secondary",
+  onSecondary: "onSecondary",
   surface: "surface",
   onSurface: "onSurface",
+  background: "background",
+  onBackground: "onBackground",
+  error: "error",
+  onError: "onError",
+  info: "info",
+  onInfo: "onInfo",
+  succes: "succes",
+  onSucces: "onSucces",
 };
 
 /**

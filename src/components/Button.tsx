@@ -38,7 +38,9 @@ export function Button({
 
   const styles = StyleSheet.create({
     text: {
-      color: parseColor(color || onPrimaryColor || "#000000"),
+      color: parseColor(
+        color || (outline ? primaryColor : onPrimaryColor) || "#000000"
+      ),
       textAlign: "center",
       fontSize: size == "large" ? 24 : size == "small" ? 12 : 16,
       fontWeight: "bold",
@@ -49,10 +51,12 @@ export function Button({
     <TouchableOpacity onPress={onPress} activeOpacity={disabled ? 1 : 0.2}>
       <Background
         rounded={rounded}
+        backgroundColor={
+          backgroundColor || (outline ? "#ffff" : primaryColor) || "#ffffff"
+        }
         outline={outline}
-        backgroundColor={backgroundColor || primaryColor || "#ffffff"}
         disabled={disabled}
-        borderColor={borderColor || onPrimaryColor || "#000000"}
+        borderColor={borderColor || primaryColor || "#000000"}
         clickable
       >
         <Text style={styles.text}>{text}</Text>
