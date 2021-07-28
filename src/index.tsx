@@ -8,6 +8,7 @@ export {
   includeCustomTheming,
   useThemingExternal,
   basicPropertiesNames,
+  makeResolverObject,
 } from "./theme/Theme";
 
 export { TextInput } from "./components/TextInput";

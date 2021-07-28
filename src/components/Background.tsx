@@ -34,11 +34,7 @@ export function Background({
       paddingVertical: paddingVertical || 14,
       paddingHorizontal: paddingHorizontal || 10,
       margin: 5,
-      backgroundColor: parseColor(
-        backgroundColor || "#ffffff",
-        backgroundColor && outline ? 0.5 : 0,
-        outline
-      ),
+      backgroundColor: parseColor(backgroundColor || "#ffffff"),
       borderStyle: "solid",
       borderWidth: outline ? 2 : 0,
       borderColor: parseColor(borderColor || "#000000"),
