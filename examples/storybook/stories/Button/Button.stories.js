@@ -17,4 +17,5 @@ storiesOf("Button", module)
     <Button onPress={action("clicked-text")} text={"Hello world"} />
   ))
   .add("outlined", () => <Button text={"Hello world"} outline />)
-  .add("rounded", () => <Button text={"Hello world"} rounded />);
+  .add("rounded", () => <Button text={"Hello world"} rounded />)
+  .add("size - large", () => <Button text={"Hello world"} size={"large"} />);
